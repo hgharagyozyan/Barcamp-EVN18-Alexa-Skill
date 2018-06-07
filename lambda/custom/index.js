@@ -76,16 +76,6 @@ const handlers = {
            .renderTemplate(listTemplate.template);
            
     this.emit(':responseReady');
-  },
-
-  'Unhandled': function() {
-    this.response.speak("I don't know that one!");
-    this.emit(':responseReady');
-  },
-
-  'SessionEndedRequest': function() {
-    this.response.speak("Goodby!");
-    this.emit(':responseReady');
   }
 
 };
@@ -205,14 +195,30 @@ const appointmentConfirmationHandlers = Alexa.CreateStateHandler(states.APPOINTM
 
 })
 
+const commonHandlers = {
+
+  'Unhandled': function() {
+    this.response.speak("I don't know that one!");
+    this.emit(':responseReady');
+  },
+
+  'SessionEndedRequest': function() {
+    this.response.speak("Goodby!");
+    this.emit(':responseReady');
+  }
+}
+
 exports.handler = function(event, context, callback) {
   const alexa = Alexa.handler(event, context, callback);
 
-  alexa.registerHandlers(handlers,
+  const allHandlers = [
+    handlers,
     doctorSelectHandlers,
     timeSlotSelectHandlers,
     appointmentConfirmationHandlers
-  );
+  ].map(handlers => Object.assign(handlers, commonHandlers))
+
+  alexa.registerHandlers(...allHandlers);
 
   alexa.execute();
 };
