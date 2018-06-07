@@ -1,0 +1,112 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "my hospital",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "PainIntent",
+          "samples": [
+            "I have a strong backpain I need to see a doctor today"
+          ]
+        },
+        {
+          "name": "SelectDoctorIntent",
+          "slots": [
+            {
+              "name": "doctorName",
+              "type": "AMAZON.Person"
+            }
+          ],
+          "samples": [
+            "the {doctorName}",
+            "I would like to see {doctorName}"
+          ]
+        },
+        {
+          "name": "SelectTimeSlotIntent",
+          "slots": [
+            {
+              "name": "fromTime",
+              "type": "AMAZON.TIME"
+            },
+            {
+              "name": "toTime",
+              "type": "AMAZON.TIME"
+            }
+          ],
+          "samples": [
+            "From {fromTime} to {toTime}"
+          ]
+        },
+        {
+          "name": "WaitIntent",
+          "slots": [],
+          "samples": [
+            "Give me a second.",
+            "Give me a second to think."
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "slots": []
+        },
+        {
+          "name": "AMAZON.MoreIntent",
+          "samples": []
+        },
+        {
+            "name": "AMAZON.NavigateHomeIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.NavigateSettingsIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.NextIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.PageUpIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.PageDownIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.PreviousIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.ScrollRightIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.ScrollDownIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.ScrollLeftIntent",
+            "samples": []
+        },
+        {
+            "name": "AMAZON.ScrollUpIntent",
+            "samples": []
+        }
+      ]
+    }
+  }
+}

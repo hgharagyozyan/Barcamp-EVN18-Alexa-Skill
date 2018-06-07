@@ -1,0 +1,20 @@
+{
+  "deploy_settings": {
+    "haykg_aws": {
+      "skill_id": "amzn1.ask.skill.1cfd1beb-849a-4d8d-9821-f5b90f071ec8",
+      "was_cloned": false,
+      "merge": {
+        "manifest": {
+          "apis": {
+            "custom": {
+              "endpoint": {
+                "uri": "ask-custom-barcamp-evn18-alexa-skill-haykg_aws"
+              }
+            }
+          }
+        }
+      },
+      "in_skill_products": []
+    }
+  }
+}
